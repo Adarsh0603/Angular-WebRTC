@@ -1,0 +1,7 @@
+#app{
+    display: flex;
+
+}
+#router{
+    flex:80%;
+}

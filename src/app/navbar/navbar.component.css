@@ -1,0 +1,23 @@
+#navbar{
+    background-color:lightcyan;
+    width: 200px;
+    height: 100vh;
+}
+
+h3{
+    color: white;
+    background-color:lightcoral;
+    padding: 1rem;
+}
+
+.item{
+    text-align: left;
+    font-size: 18px;
+    cursor:pointer;
+    width: 200px;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    background-color: white;
+    color:black;
+}
