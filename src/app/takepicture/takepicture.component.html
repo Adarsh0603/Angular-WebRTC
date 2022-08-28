@@ -1,0 +1,11 @@
+<div style="display: flex;flex-direction:row;gap: 20px;">
+    <div style="display: flex; flex-direction: column;">
+        <video class="video-player" width="480" height="360" [srcObject]="localStream$|async" #video autoplay
+            playsinline></video>
+        <button (click)="onCapture()">Capture</button>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <canvas #canvas></canvas>
+        <button *ngIf="isCaptured" (click)="download()">Download</button>
+    </div>
+</div>

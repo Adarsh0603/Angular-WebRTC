@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 import { WebrtcService } from '../webrtc.service';
 
 @Component({
@@ -7,13 +8,11 @@ import { WebrtcService } from '../webrtc.service';
   styleUrls: ['./usermedia.component.css'],
 })
 export class UsermediaComponent implements OnInit {
-  localStream!: MediaStream;
+  localStream$!: Observable<MediaStream>;
   constructor(private wr: WebrtcService) {}
 
   ngOnInit(): void {
-    this.wr.getUserMedia();
-    this.wr.localStream$.subscribe((mediaStream) => {
-      if (mediaStream) this.localStream = mediaStream;
-    });
+    this.wr.getUserMedia(800, 600);
+    this.localStream$ = this.wr.localStream$;
   }
 }

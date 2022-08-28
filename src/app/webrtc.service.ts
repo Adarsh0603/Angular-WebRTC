@@ -8,9 +8,9 @@ export class WebrtcService {
   localStream$ = new BehaviorSubject<MediaStream>(new MediaStream());
   constructor() {}
 
-  async getUserMedia() {
+  async getUserMedia(width = 640, height = 480) {
     var localStream = await navigator.mediaDevices.getUserMedia({
-      video: true,
+      video: { width: width, height: height },
       audio: false,
     });
 

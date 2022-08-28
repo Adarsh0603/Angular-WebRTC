@@ -1,1 +1,3 @@
-<video class="video-player" [srcObject]="localStream" #video autoplay playsinline></video>
+<div>
+    <video class="video-player" [srcObject]="localStream$ |async" #video autoplay playsinline></video>
+</div>

@@ -1,4 +1,4 @@
 <div id="navbar">
     <h3>Angular WebRTC</h3>
-    <button class="item" routerLink="/">Local Stream</button>
+    <button *ngFor="let route of routes" class="item" [routerLink]="route.route">{{route.text}}</button>
 </div>
