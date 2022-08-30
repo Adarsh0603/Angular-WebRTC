@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { UsermediaComponent } from './usermedia/usermedia.component';
 import { TakepictureComponent } from './takepicture/takepicture.component';
+import { RecordvideoComponent } from './recordvideo/recordvideo.component';
 
 const routes: Route[] = [
   {
@@ -12,6 +13,10 @@ const routes: Route[] = [
   {
     path: 'takepicture',
     component: TakepictureComponent,
+  },
+  {
+    path: 'recordstream',
+    component: RecordvideoComponent,
   },
 ];
 

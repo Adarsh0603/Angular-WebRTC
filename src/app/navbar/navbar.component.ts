@@ -16,6 +16,10 @@ export class NavbarComponent implements OnInit {
       route: '/takepicture',
       text: 'Take Picture',
     },
+    {
+      route: '/recordstream',
+      text: 'Record Stream',
+    },
   ];
   ngOnInit(): void {}
 }
