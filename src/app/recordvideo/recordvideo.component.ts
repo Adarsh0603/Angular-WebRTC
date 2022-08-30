@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Observable, Subscription } from 'rxjs';
 import { WebrtcService } from '../webrtc.service';
@@ -31,7 +38,6 @@ export class RecordvideoComponent implements OnInit, OnDestroy {
     this.streamSub = this.localStream$.subscribe((stream) => {
       if (stream) this.stream = stream;
     });
-
     this.supportedMimeTypes = this.wr.getSupportedMimeTypes();
     this.selectedMimeType = this.supportedMimeTypes[0];
   }

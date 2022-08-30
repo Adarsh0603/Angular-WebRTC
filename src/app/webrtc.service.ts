@@ -11,7 +11,7 @@ export class WebrtcService {
   async getUserMedia(width = 640, height = 480) {
     var localStream = await navigator.mediaDevices.getUserMedia({
       video: { width: width, height: height },
-      audio: false,
+      audio: true,
     });
 
     this.localStream$.next(localStream);
