@@ -8,7 +8,7 @@ import { WebrtcService } from '../webrtc.service';
   styleUrls: ['./takepicture.component.css'],
 })
 export class TakepictureComponent implements OnInit {
-  localStream$!: Observable<MediaStream>;
+  localStream$!: Observable<MediaStream | null>;
   @ViewChild('canvas', { static: true }) canvas?: ElementRef<HTMLCanvasElement>;
   @ViewChild('video', { static: true }) video?: ElementRef<HTMLVideoElement>;
 

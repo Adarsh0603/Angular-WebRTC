@@ -5,8 +5,8 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class WebrtcService {
-  localStream$ = new BehaviorSubject<MediaStream>(new MediaStream());
-  screenStream$ = new BehaviorSubject<MediaStream>(new MediaStream());
+  localStream$ = new BehaviorSubject<MediaStream | null>(null);
+  screenStream$ = new BehaviorSubject<MediaStream | null>(null);
   constructor() {}
 
   async getUserMedia(width = 640, height = 480) {

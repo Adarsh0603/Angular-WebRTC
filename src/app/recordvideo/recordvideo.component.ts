@@ -9,7 +9,7 @@ import { WebrtcService } from '../webrtc.service';
   styleUrls: ['./recordvideo.component.css'],
 })
 export class RecordvideoComponent implements OnInit, OnDestroy {
-  localStream$!: Observable<MediaStream>;
+  localStream$!: Observable<MediaStream | null>;
   stream?: MediaStream;
   streamSub!: Subscription;
 

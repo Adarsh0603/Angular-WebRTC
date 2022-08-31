@@ -8,7 +8,7 @@ import { WebrtcService } from '../webrtc.service';
   styleUrls: ['./usermedia.component.css'],
 })
 export class UsermediaComponent implements OnInit {
-  localStream$!: Observable<MediaStream>;
+  localStream$!: Observable<MediaStream | null>;
   constructor(private wr: WebrtcService) {}
 
   ngOnInit(): void {

@@ -9,7 +9,7 @@ import { WebrtcService } from '../webrtc.service';
   styleUrls: ['./screen-stream.component.css'],
 })
 export class ScreenStreamComponent implements OnInit {
-  screenStream$!: Observable<MediaStream>;
+  screenStream$!: Observable<MediaStream | null>;
   stream?: MediaStream;
   streamSub!: Subscription;
 
