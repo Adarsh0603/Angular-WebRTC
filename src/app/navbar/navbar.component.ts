@@ -20,6 +20,10 @@ export class NavbarComponent implements OnInit {
       route: '/recordstream',
       text: 'Record Stream',
     },
+    {
+      route: '/screenstream',
+      text: 'Screen Stream',
+    },
   ];
   ngOnInit(): void {}
 }

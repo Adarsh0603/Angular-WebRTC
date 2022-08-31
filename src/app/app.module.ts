@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TakepictureComponent } from './takepicture/takepicture.component';
 import { RecordvideoComponent } from './recordvideo/recordvideo.component';
 import { MutevoiceDirective } from './directives/mutevoice.directive';
+import { ScreenStreamComponent } from './screen-stream/screen-stream.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { MutevoiceDirective } from './directives/mutevoice.directive';
     TakepictureComponent,
     RecordvideoComponent,
     MutevoiceDirective,
+    ScreenStreamComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

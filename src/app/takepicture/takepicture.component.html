@@ -5,7 +5,7 @@
         <button (click)="onCapture()">Capture</button>
     </div>
     <div style="display: flex; flex-direction: column;">
-        <canvas #canvas></canvas>
+        <canvas #canvas style="background-color: lightgray;" width="480" height="360"></canvas>
         <button *ngIf="isCaptured" (click)="download()">Download</button>
     </div>
 </div>

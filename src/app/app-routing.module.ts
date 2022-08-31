@@ -4,6 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 import { UsermediaComponent } from './usermedia/usermedia.component';
 import { TakepictureComponent } from './takepicture/takepicture.component';
 import { RecordvideoComponent } from './recordvideo/recordvideo.component';
+import { ScreenStreamComponent } from './screen-stream/screen-stream.component';
 
 const routes: Route[] = [
   {
@@ -17,6 +18,10 @@ const routes: Route[] = [
   {
     path: 'recordstream',
     component: RecordvideoComponent,
+  },
+  {
+    path: 'screenstream',
+    component: ScreenStreamComponent,
   },
 ];
 

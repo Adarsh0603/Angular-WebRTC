@@ -12,7 +12,10 @@ export class UsermediaComponent implements OnInit {
   constructor(private wr: WebrtcService) {}
 
   ngOnInit(): void {
-    this.wr.getUserMedia(800, 600);
     this.localStream$ = this.wr.localStream$;
+  }
+
+  onClick() {
+    this.wr.getUserMedia(800, 600);
   }
 }

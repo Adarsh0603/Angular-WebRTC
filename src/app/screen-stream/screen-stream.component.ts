@@ -1,15 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Observable, Subscription } from 'rxjs';
 import { WebrtcService } from '../webrtc.service';
 
 @Component({
-  selector: 'app-recordvideo',
-  templateUrl: './recordvideo.component.html',
-  styleUrls: ['./recordvideo.component.css'],
+  selector: 'app-screen-stream',
+  templateUrl: './screen-stream.component.html',
+  styleUrls: ['./screen-stream.component.css'],
 })
-export class RecordvideoComponent implements OnInit, OnDestroy {
-  localStream$!: Observable<MediaStream>;
+export class ScreenStreamComponent implements OnInit {
+  screenStream$!: Observable<MediaStream>;
   stream?: MediaStream;
   streamSub!: Subscription;
 
@@ -26,13 +26,15 @@ export class RecordvideoComponent implements OnInit, OnDestroy {
   constructor(private wr: WebrtcService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    this.wr.getUserMedia();
-    this.localStream$ = this.wr.localStream$;
-    this.streamSub = this.localStream$.subscribe((stream) => {
+    this.screenStream$ = this.wr.screenStream$;
+    this.streamSub = this.screenStream$.subscribe((stream) => {
       if (stream) this.stream = stream;
     });
     this.supportedMimeTypes = this.wr.getSupportedMimeTypes();
     this.selectedMimeType = this.supportedMimeTypes[0];
+  }
+  shareScreen() {
+    this.wr.getDisplayMedia();
   }
 
   onRecordStartStop() {
@@ -70,6 +72,8 @@ export class RecordvideoComponent implements OnInit, OnDestroy {
     this.recordedData = '';
   }
   playRecording() {
+    var player = document.querySelector('#player');
+    player?.requestFullscreen();
     const mimeType = this.selectedMimeType.split(';', 1)[0];
     const combinedSlice = new Blob(this.recordedSlices, { type: mimeType });
     this.recordedData = this.sanitizer.bypassSecurityTrustUrl(

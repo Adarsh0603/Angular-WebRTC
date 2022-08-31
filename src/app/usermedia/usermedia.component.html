@@ -1,3 +1,4 @@
-<div>
+<div class="flex-center">
     <video class="video-player" appMuteVoice [srcObject]="localStream$ |async" #video autoplay playsinline></video>
+    <button (click)="onClick()">Start Camera</button>
 </div>
